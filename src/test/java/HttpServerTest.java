@@ -23,7 +23,7 @@ class HttpServerTest {
     @BeforeAll
         static void setUp() {
         serverThread =
-                new Thread(() -> HttpServer.main(String.valueOf(PORT))); // TODO: 28.07.17 refactor
+                new Thread(() -> HttpServer.main(String.valueOf(PORT)), "server"); // TODO: 28.07.17 refactor
         serverThread.start();
     }
 
@@ -40,6 +40,7 @@ class HttpServerTest {
             BufferedReader bufferedReader = new BufferedReader(
                  new InputStreamReader(socket.getInputStream()))) {
             outputStream.write(REQUEST.getBytes());
+            //outputStream.close();
             String line;
             while((line = bufferedReader.readLine()) != null && !line.trim().isEmpty()) {
                 System.out.println(line);
