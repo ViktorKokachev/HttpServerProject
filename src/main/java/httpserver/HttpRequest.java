@@ -1,3 +1,5 @@
+package httpserver;
+
 import java.util.Map;
 
 public interface HttpRequest {

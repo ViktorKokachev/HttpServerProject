@@ -1,3 +1,5 @@
+package httpserver;
+
 import lombok.SneakyThrows;
 
 import java.net.ServerSocket;

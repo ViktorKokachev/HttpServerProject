@@ -1,3 +1,5 @@
+package httpserver;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -74,7 +76,7 @@ public class SocketProcessor implements Runnable {
 
         StringBuilder body = new StringBuilder();
 
-        //if (httpMethod == HttpMethod.PUT || httpMethod == HttpMethod.POST)
+        //if (httpMethod == httpserver.HttpMethod.PUT || httpMethod == httpserver.HttpMethod.POST)
         while (br.ready() && (s = br.readLine()) != null)
             body.append(s);
 
