@@ -53,7 +53,7 @@ class HttpServerTest {
                     .collect(Collectors.joining("\r\n"));
 
 
-            String s = "<html><body><h1>Hello from Habrahabr</h1></body></html>";
+            String s = HelloWorldServer.HTML;
             assertThat(response, is(String.format(SocketProcessor.RESPONSE, s.length(), s)));
 
             String line;

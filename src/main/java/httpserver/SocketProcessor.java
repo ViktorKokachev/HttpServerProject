@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SocketProcessor implements Runnable {
+public abstract class SocketProcessor implements Runnable {
 
     public static final String RESPONSE =
             "HTTP/1.1 200 OK\r\n" +
@@ -44,9 +44,8 @@ public class SocketProcessor implements Runnable {
         System.err.println("Client processing finished");
     }
 
-    private String mapRequest(HttpRequest httpRequest) {
-        return "<html><body><h1>Hello from Habrahabr</h1></body></html>";
-    }
+    abstract protected String mapRequest(HttpRequest httpRequest);
+
 
     private void writeResponse(String s) throws Throwable {
         os.write(String.format(RESPONSE, s.length(), s).getBytes());
